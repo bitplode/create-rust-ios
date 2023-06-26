@@ -113,5 +113,5 @@ Cargo.lock
 # Mac files
 .DS_Store
 
-# bitplode_cli
-history.txt
+# generated folders
+generated_rust_ios_apps
