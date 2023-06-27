@@ -3,5 +3,5 @@
   "output_dir": "./generated_rust_ios_apps",
   "rust_file_name": "rust_bridge_header",
   "rust_dir": "rust",
-  "ios_dir": "~/Documents/NoCrunchTime/bitplode_united/BitplodeApp"
+  "ios_dir": "~/Documents/MyIOSApp"
 }
