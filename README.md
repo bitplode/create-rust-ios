@@ -213,3 +213,5 @@ What you should do to make changes is:
     ...
   }
 ```
+
+Then you can rebuild the iOS app and it should be able to call into Rust correctly, i.e. passing data in and getting results back.
