@@ -194,3 +194,22 @@ The setting `Objective-C Bridging Header` is set to `MyIOSApp/rust_bridge_header
 Once you've run the program and the `install.sh` script, you will be able to open the iOS project (e.g. `MyIOSApp`) in XCode and build from there.
 
 For each Rust function you wish to expose to Swift, you will have to update the 
+
+### Coding Changes after That
+
+OK, so you have a Rust lib that can be invoked from a Swift iOS app. Great! But you will probably want to make changes to it (especially since it is so basic right now...) 
+
+What you should do to make changes is:
+
+*STEP 1:* [In Rust] to change the code in the `generated_rust_ios_apps` directory. You can add new methods and make sure they are marked with `#[no_mangle]` in the [generated_rust_ios_apps/rust/src/lib.rs](generated_rust_ios_apps/rust/src/lib.rs) file.
+
+*STEP 2:* [In Rust] to add in the appropriate headers in the [generated_rust_ios_apps/rust/rust_bridge_header.h](generated_rust_ios_apps/rust/rust_bridge_header.h) C header file.
+
+*STEP 3:* [In Swift] to add in the appropriate C header usage in your Swift app, as shown below in a file like `MyIOSApp/ContentView.swift`:
+
+```swift
+  func doStuff(message: String) -> Void {
+    print("The greeting is " + String(cString: rust_greet(message)!));
+    ...
+  }
+```
