@@ -2,6 +2,10 @@
 
 This is a code generator. Yes, the dreaded animal that takes (some) input and spits out code. In this case, we enter a configuration for a Rust lib project that will be used by a Swift iOS project. Let's see where this goes.
 
+## Credit
+
+The ideas for this repo were inspired by [Emil Sjölander's article, "Rust on iOS"](https://medium.com/visly/rust-on-ios-39f799b3c1dd). It will be helpful to you, if you read that first.
+
 ## Configuration
 
 Location of file:
